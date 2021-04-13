@@ -148,7 +148,9 @@ export default function ProductCard(props) {
                         title={'ADD TO CART'}
                         spinnerSize={'lg'}
                         onlyLoading
-                        onClick={() => handleAddToCart()}
+                        // TODO
+                        // onClick={() => handleAddToCart()}
+                        onClick={() => {}}
                     />
                     // </div>
                     :

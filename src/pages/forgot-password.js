@@ -238,7 +238,7 @@ class ForgotPassword extends Component {
                                             </Col>
                                             <Col lg={12} md={12} sm={12} xs={12} className='logo_col'>
                                                 <div className='d-flex flex-column ml-3'>
-                                                    <div className="text-center welcome_note" >{'Welcome to rocery SHop'} </div>
+                                                    <div className="text-center welcome_note" >{'Welcome to Grocery SHop'} </div>
                                                     <div className="text-center welcome_note pb-3" >{'Reset Your Password'} </div>
                                                 </div>
                                             </Col>

@@ -22,7 +22,7 @@ const CssTransition = props => {
                             <Card.Title style={{ fontWeight: 'bolder' }}>Contact Us</Card.Title>
                             <div className='flex-row align-items-center mt-2'>
                                 <HiOutlineLocationMarker style={styles.dotsIcon} />
-                                <label className='dotViewLabel'>H-10 Islamabad, Pakistan</label>
+                                <label className='dotViewLabel'>XYZ</label>
                             </div>
                             <div className='flex-row align-items-center  mt-2'>
                                 <AiOutlinePhone style={styles.dotsIcon} />

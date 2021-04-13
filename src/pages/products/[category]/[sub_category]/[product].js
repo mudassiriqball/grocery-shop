@@ -53,7 +53,7 @@ export default function Product(props) {
     const [activeImgIndex, setActiveImgIndex] = useState(0);
 
     // User
-    const [user, setUser] = useState({ _id: '', fullName: '', mobile: '', city: '',  address: '', email: '', status: '', role: '', wishList: '', cart: '', entry_date: '' })
+    const [user, setUser] = useState({ _id: '', fullName: '', mobile: '', city: '', address: '', email: '', status: '', role: '', wishList: '', cart: '', entry_date: '' })
     const [token, setToken] = useState('');
     useEffect(() => {
         setProductLoading(true);
@@ -258,7 +258,9 @@ export default function Product(props) {
                                                 disabled={cartLoading}
                                                 title={'ADD TO CART'}
                                                 size={isMobile ? 'sm' : 'lg'}
-                                                onClick={() => handleAddToCart()}
+                                                // TODO
+                                                // onClick={() => handleAddToCart()}
+                                                onClick={() => { }}
                                             />
                                         </Col>
                                     </Row>

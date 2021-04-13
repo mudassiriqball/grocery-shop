@@ -211,7 +211,9 @@ export default function Layout(props) {
                                             <Nav.Link href="/profile" style={{ fontWeight: 'bold', padding: '10px 30px', fontSize: '12px', borderBottom: `1px solid #e6e6e6` }}>PROFILE</Nav.Link>
                                         </div>
                                         <div className='link_div'>
-                                            <Nav.Link href="/cart" style={{ fontWeight: 'bold', padding: '10px 30px', fontSize: '12px', borderBottom: `1px solid #e6e6e6` }}>CART</Nav.Link>
+                                            {/* TODO */}
+                                            {/* <Nav.Link href="/cart" style={{ fontWeight: 'bold', padding: '10px 30px', fontSize: '12px', borderBottom: `1px solid #e6e6e6` }}>CART</Nav.Link> */}
+                                            <Nav.Link href="#" style={{ fontWeight: 'bold', padding: '10px 30px', fontSize: '12px', borderBottom: `1px solid #e6e6e6` }}>CART</Nav.Link>
                                         </div>
                                         <div className='link_div'>
                                             <Nav.Link href="/help" style={{ fontWeight: 'bold', padding: '10px 30px', fontSize: '12px', borderBottom: `1px solid #e6e6e6` }}>HELP</Nav.Link>
@@ -234,7 +236,9 @@ export default function Layout(props) {
                                 </Nav.Link>
                             </div>
                             <div className='coloreBoxIcon'>
-                                <Nav.Link href="/cart" style={{ display: 'flex', position: 'relative', justifyContent: 'center', alignItems: 'center', width: '60px', height: '60px' }}>
+                                {/* TODO */}
+                                {/* <Nav.Link href="/cart" style={{ display: 'flex', position: 'relative', justifyContent: 'center', alignItems: 'center', width: '60px', height: '60px' }}> */}
+                                <Nav.Link href="#" style={{ display: 'flex', position: 'relative', justifyContent: 'center', alignItems: 'center', width: '60px', height: '60px' }}>
                                     <ImCart style={styles.coloreBoxIcon} />
                                     <Badge variant="light" style={{ position: 'absolute', top: '5px', right: '5px' }}>{user.cart && user.cart.length || '0'}</Badge>
                                 </Nav.Link>
