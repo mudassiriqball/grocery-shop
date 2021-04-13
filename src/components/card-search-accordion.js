@@ -4,11 +4,9 @@ import { faSlidersH } from '@fortawesome/free-solid-svg-icons';
 import React, { useState, useEffect } from 'react';
 
 import consts from '../constants';
-import Scanner from '../utils/scanner/scanner';
 
 export default function CardSearchAccordion(props) {
     const [options, setOptions] = useState([]);
-    const [showScanner, setShowScanner] = useState(false);
 
     const [searchType, setSearchType] = useState('_id');
     const [searchValue, setSearchValue] = useState(props.value);
@@ -51,9 +49,6 @@ export default function CardSearchAccordion(props) {
         })
         if (props.option == 'inventory') {
             setOptions(prevPro => {
-                return [...new Set([...prevPro, { value: 'qr_id', name: 'Scan Code' }])]
-            })
-            setOptions(prevPro => {
                 return [...new Set([...prevPro, { value: 'name', name: 'Product Name' }])]
             })
         } else if (props.option == 'customer') {
@@ -79,9 +74,6 @@ export default function CardSearchAccordion(props) {
             })
 
         } else if (props.option == 'order') {
-            setOptions(prevPro => {
-                return [...new Set([...prevPro, { value: 'order_qr_id', name: 'Scan Code' }])]
-            })
             setOptions(prevPro => {
                 return [...new Set([...prevPro, { value: 'c_id', name: 'Cutomer ID' }])]
             })
@@ -109,9 +101,6 @@ export default function CardSearchAccordion(props) {
                                 <FontAwesomeIcon icon={faSlidersH} className='search_accordian_fontawesome' />
                             </Accordion.Toggle>
                         </Col>
-                        <Col className='pb-3'>
-                            {showScanner && <Scanner small setScanerCode={(val) => { onSearchValueChange(val), setShowScanner(true); }} />}
-                        </Col>
                         <Col lg={12} md={12} sm={12} xs={12} className='accordian_col md_padding'>
                             <Row noGutters>
                                 <Col className='ml-1' lg='auto' md='auto' sm='auto' xs='auto'>
@@ -119,7 +108,7 @@ export default function CardSearchAccordion(props) {
                                         variant="dark"
                                         size='sm'
                                         value={props.searchType}
-                                        onChange={(e) => { setSearchType(e.target.value), setShowScanner((e.target.value === 'qr_id' || e.target.value === 'order_qr_id') ? true : false) }}>
+                                        onChange={(e) => { setSearchType(e.target.value)}}>
                                         {options.map((element, index) =>
                                             <option value={element.value} key={index}>{element.name}</option>
                                         )}

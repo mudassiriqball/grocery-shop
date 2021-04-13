@@ -114,7 +114,7 @@ export default function Layout(props) {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" style={{ marginTop: '10px', marginBottom: '10px', marginRight: 'auto' }} />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className='sm_xs_display_none'>
-                            <Image src='/logo.png' style={{ width: '200px', maxWidth: '200px' }} />
+                            <Image src='/logo.png' style={{ width: '150px', maxWidth: '200px', height: '70px' }} />
                         </Nav>
 
                         <Nav className="justify-content-center mr-auto ml-auto" >

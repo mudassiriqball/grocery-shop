@@ -58,16 +58,7 @@ productsController.add_rating_and_review = async (req, res) => {
 //Add product endpoint definition
 productsController.addProduct = async (req, res) => {
   const body = req.body;
-
   try {
-    let check = await Products.countDocuments({ qr_id: body.qr_id });
-    if (check === 1) {
-      res.status(201).send({
-        code: 201,
-        message: "QR Code already exists",
-      });
-    }
-    else {
       var datetime = new Date();
       body.isdeleted = false;
       body.entry_date = datetime;
@@ -79,7 +70,6 @@ productsController.addProduct = async (req, res) => {
         code: 200,
         message: "product Added Successfully",
       });
-    }
   } catch (error) {
     console.log("error", error);
     return res

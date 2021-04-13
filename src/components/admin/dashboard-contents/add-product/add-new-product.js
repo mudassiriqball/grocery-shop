@@ -14,11 +14,9 @@ import CardAccordion from '../../../card-accordion';
 import consts from '../../../../constants';
 import urls from '../../../../utils/urls';
 import Specifications from './specifications';
-import Scanner from '../../../../utils/scanner/scanner';
 
 // Yup Schema for validation fields
 const schema = yup.object({
-    qr_id: yup.string().required('Required *'),
     name: yup.string().required('Required *')
         .min(2, "Must have at least 2 characters")
         .max(200, "Can't be longer than 200 characters"),
@@ -248,7 +246,6 @@ class AddNew extends Component {
                 validationSchema={schema}
                 initialValues={
                     {
-                        qr_id: '',
                         name: '',
                         price: '',
                         stock: '',
@@ -313,27 +310,6 @@ class AddNew extends Component {
                             />
                             <Row noGutters style={{ paddingTop: '1%' }}>
                                 <Col lg={12} md={12} sm={12} xs={12}>
-                                    <Form.Group as={Row} style={{ margin: '0.5% 2% 2% 2%', padding: '0%' }}>
-                                        <Scanner setScanerCode={(val) => setFieldValue('qr_id', val)} />
-                                    </Form.Group>
-                                </Col>
-                                <Col lg={12} md={12} sm={12} xs={12}>
-                                    <Form.Group as={Row} style={{ margin: '0.5% 2% 2% 2%', padding: '0%' }}>
-                                        <Form.Label style={styles.label}>{'QR Code '}<span>*</span></Form.Label>
-                                        <InputGroup>
-                                            <Form.Control
-                                                type="text"
-                                                placeholder="Scan Barcode or Choose File"
-                                                name="qr_id"
-                                                value={values.qr_id}
-                                                onChange={handleChange}
-                                                isInvalid={errors.qr_id && touched.qr_id}
-                                            />
-                                            <Form.Control.Feedback type="invalid">
-                                                {errors.qr_id}
-                                            </Form.Control.Feedback>
-                                        </InputGroup>
-                                    </Form.Group>
                                     {/* Product Name */}
                                     <Form.Group as={Row} style={{ margin: '0.5% 2% 2% 2%', padding: '0%' }}>
                                         <Form.Label style={styles.label}>Product Name<span>*</span></Form.Label>
