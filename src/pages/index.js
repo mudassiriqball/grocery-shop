@@ -39,7 +39,7 @@ export async function getServerSideProps(context) {
 }
 
 export default function Home(props) {
-  const [user, setUser] = useState({ _id: '', fullName: '', mobile: '', city: '', licenseNo: '', address: '', email: '', status: '', role: '', wishList: '', cart: '', entry_date: '' })
+  const [user, setUser] = useState({ _id: '', fullName: '', mobile: '', city: '',  address: '', email: '', status: '', role: '', wishList: '', cart: '', entry_date: '' })
   const [token, setToken] = useState('');
   const [showChild, setShowChild] = useState(false);
 
@@ -74,8 +74,8 @@ export default function Home(props) {
   return (
     <div className="_container">
       <Head>
-        <title>afghandarmaltoon</title>
-        <link rel="icon" href="logo.jpg" />
+        <title>grocery-shop</title>
+        <link rel="icon" href="logo.png" />
         <link
           rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"

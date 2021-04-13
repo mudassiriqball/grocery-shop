@@ -11,7 +11,6 @@ import { MdRemoveShoppingCart } from 'react-icons/md';
 // import AdminDashboard from './dashboard-contents/admin-dashboard';
 import AddProduct from './dashboard-contents/add-product/add-new-product'
 
-import DeliveryBoy from './dashboard-contents/deliveryBoy';
 import Customers from './dashboard-contents/customers';
 import Slider from './dashboard-contents/slider'
 // Products
@@ -43,7 +42,7 @@ const DashboardSideDrawer = props => {
                         <Nav.Item style={styles.image_div}>
                             <p>
                                 <Image src={props.avatar} roundedCircle thumbnail fluid style={styles.image} />
-                                <Nav.Link style={styles.afghan}> {props.fullName} </Nav.Link>
+                                <Nav.Link style={styles.nav_link}> {props.fullName} </Nav.Link>
                             </p>
                         </Nav.Item>
                         <Nav.Item>
@@ -51,15 +50,6 @@ const DashboardSideDrawer = props => {
                                 <Nav.Link eventKey="Customers" onClick={props.click} style={styles.nav_link}>
                                     <FontAwesomeIcon size="xs" icon={faUsers} style={styles.fontawesome} />
                                     <div className="mr-auto">Customers</div>
-                                    <FontAwesomeIcon icon={faChevronRight} style={styles.forword_fontawesome} />
-                                </Nav.Link>
-                            </div>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <div className="nav_link">
-                                <Nav.Link eventKey="DeliveryBoy" onClick={props.click} style={styles.nav_link}>
-                                    <FontAwesomeIcon icon={faUsers} style={styles.fontawesome} />
-                                    <div className="mr-auto">DeliveryBoy</div>
                                     <FontAwesomeIcon icon={faChevronRight} style={styles.forword_fontawesome} />
                                 </Nav.Link>
                             </div>
@@ -154,9 +144,6 @@ const DashboardSideDrawer = props => {
                         <Tab.Content>
                             <Tab.Pane eventKey="Customers">
                                 <Customers {...props} />
-                            </Tab.Pane>
-                            <Tab.Pane eventKey="DeliveryBoy">
-                                <DeliveryBoy {...props} />
                             </Tab.Pane>
                             <Tab.Pane eventKey="Inventory">
                                 <Inventory {...props} />
@@ -265,7 +252,7 @@ const styles = {
         minHeight: '100px',
         maxHeight: '100px',
     },
-    afghan: {
+    nav_link: {
         color: `${consts.COLORS.SEC}`,
         fontSize: '14px',
         margin: '0%',

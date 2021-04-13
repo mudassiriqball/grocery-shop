@@ -37,7 +37,7 @@ export async function getServerSideProps(context) {
 export default function Profile(props) {
     const [token, setToken] = useState(null)
     const [user, setUser] = useState({
-        _id: '', fullName: '', mobile: '', city: '', licenseNo: '', address: '',
+        _id: '', fullName: '', mobile: '', city: '', address: '',
         email: '', status: '', role: '', wishList: '', cart: '', entry_date: ''
     })
 

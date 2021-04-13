@@ -19,9 +19,6 @@ const User = new Schema({
     password: {
         type: String,
     },
-    licenseNo: {
-        type: String,
-    },
     role: {
         type: String,
     },

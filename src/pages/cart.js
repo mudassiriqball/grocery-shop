@@ -51,7 +51,7 @@ export default function Cart(props) {
     const [showDotView, setshowDotView] = useState(false);
 
     const [token, setToken] = useState(null)
-    const [user, setUser] = useState({ _id: '', fullName: '', mobile: '', city: '', licenseNo: '', address: '', email: '', status: '', role: '', wishList: '', cart: '', entry_date: '' })
+    const [user, setUser] = useState({ _id: '', fullName: '', mobile: '', city: '',  address: '', email: '', status: '', role: '', wishList: '', cart: '', entry_date: '' })
 
     const [cart_list, setCart_list] = useState([])
     const [isCartLoading, setIsCartLoading] = useState(false)

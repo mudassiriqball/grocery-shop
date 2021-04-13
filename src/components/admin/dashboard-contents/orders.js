@@ -3,7 +3,6 @@ import axios from 'axios'
 import { Row, Col, Card, Nav, Table, Form, Button, InputGroup, Image } from 'react-bootstrap'
 import { faEdit, faCheckCircle } from '@fortawesome/free-regular-svg-icons';
 import moment from 'moment'
-import QRCode from "react-qr-code";
 import TitleRow from '../../title-row'
 import CardSearchAccordion from '../../card-search-accordion';
 
@@ -426,18 +425,13 @@ function ViewOrder(props) {
             <Card className='view_user' ref={componentRef}>
                 <Card.Body>
                     <div className='logo_col'>
-                        <Image src='/logo.jpg' className='logo' />
-                        <h2 className='p-0 ml-3'>afghandarmaltoon.com</h2>
+                        <Image src='/logo.png' className='logo' />
+                        <h2 className='p-0 ml-3'>grocery-shop.com</h2>
                     </div>
                     <p className='p'><span>Order Info</span></p>
                     <Row>
                         {props.singleOrderData.status == 'pending' ?
                             <>
-                                <Col lg={6} md={6} sm={12} xs={12}>
-                                    <Form.Group as={Col} lg={12} md={12} sm={12} xs={12} className='w-100'>
-                                        <QRCode value={props._id} />
-                                    </Form.Group>
-                                </Col>
                                 <Col lg={6} md={6} sm={12} xs={12}>
                                     <Form.Group as={Row} className='w-100'>
                                         <Form.Label className='form_label'>Placed On</Form.Label>

@@ -114,7 +114,7 @@ export default function Layout(props) {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" style={{ marginTop: '10px', marginBottom: '10px', marginRight: 'auto' }} />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className='sm_xs_display_none'>
-                            <Image src='/logo.jpg' style={{ width: '200px', maxWidth: '200px' }} />
+                            <Image src='/logo.png' style={{ width: '200px', maxWidth: '200px' }} />
                         </Nav>
 
                         <Nav className="justify-content-center mr-auto ml-auto" >
@@ -336,7 +336,7 @@ export default function Layout(props) {
                     ._layout .sticky-inner {
                         padding: 1.7% 2%;
                     }
-                    ._layout .afghandarmaltoon { 
+                    ._layout .grocery_shop { 
                         font-size: 25px;
                     }
                 }
@@ -350,7 +350,7 @@ export default function Layout(props) {
                     ._layout .sticky-inner {
                         padding: 0.5% 4%;
                     }
-                    ._layout .afghandarmaltoon { 
+                    ._layout .grocery_shop { 
                         font-size: 15px;
                     }
                 }
@@ -363,7 +363,7 @@ export default function Layout(props) {
                     }
                 }
                 // Animation
-                ._layout .afghandarmaltoon { 
+                ._layout .grocery_shop { 
                     font-size: 25px;
                     animation: bounce 1s; 
                     animation-direction: alternate; 

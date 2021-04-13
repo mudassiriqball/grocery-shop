@@ -38,7 +38,7 @@ class Customers extends React.Component {
 
             token: null,
             user: {
-                _id: '', fullName: '', mobile: '', city: '', licenseNo: '', address: '',
+                _id: '', fullName: '', mobile: '', city: '',  address: '',
                 email: '', status: '', role: '', wishList: '', cart: '', entry_date: ''
             }
         }
@@ -453,7 +453,6 @@ function CustomerTableBody(props) {
                     <tr>
                         <th>#</th>
                         <th>ID</th>
-                        <th>License #</th>
                         <th>Mobile</th>
                         <th>Name</th>
                         <th>Date</th>
@@ -470,7 +469,6 @@ function CustomerTableBody(props) {
                                     <Nav.Link className='pt-0 delete' onClick={() => props.setDiscard(element)}>Discard</Nav.Link>
                                 </div>
                             </td>
-                            <td align="center" >{element.licenseNo}</td>
                             <td align="center" >{element.mobile}</td>
                             <td align="center" >{element.fullName}</td>
                             <td align="center" >{element.entry_date.substring(0, 10)}</td>

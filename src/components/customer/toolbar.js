@@ -97,8 +97,8 @@ export default function Toolbar(props) {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" style={{ marginTop: '10px', marginBottom: '10px', marginRight: 'auto' }} />
                 <Navbar.Collapse id="responsive-navbar-nav ">
                     <Nav className="mr-auto">
-                        <Nav.Link href='/' style={{ fontWeight: 'bold', fontSize: '15px' }} active>AFGHANDARMALTOON@GMAIL.COM</Nav.Link>
-                        <Nav.Link style={{ fontWeight: 'bold', fontSize: '15px' }} active>+92 335 9929528</Nav.Link>
+                        <Nav.Link href='/' style={{ fontWeight: 'bold', fontSize: '15px' }} active>GROCERYSHOP@GMAIL.COM</Nav.Link>
+                        <Nav.Link style={{ fontWeight: 'bold', fontSize: '15px' }} active>+92 310 1234567</Nav.Link>
                     </Nav>
                     {/* Login/Signup */}
                     {user && user.fullName === '' &&
@@ -122,10 +122,10 @@ export default function Toolbar(props) {
                                                 <Form.Group controlId="formBasicEmail">
                                                     <PhoneInput
                                                         inputStyle={{ width: '100%' }}
-                                                        country={'pk'}
-                                                        onlyCountries={['pk', 'af']}
+                                                        country={'us'}
+                                                        onlyCountries={['us', 'pk']}
                                                         value={mobile}
-                                                        searchPlaceholder={'3359929528'}
+                                                        searchPlaceholder={'310 1234567'}
                                                         onChange={phone => { setMobile(phone), setmobileError(''), setError('') }}
                                                         onKeyPress={(e) => handleEnterKeyPress(e)}
                                                     />

@@ -31,7 +31,6 @@ const schema = yup.object({
     address: yup.string().required('Required *')
         .min(5, 'Must be Greater than 5 Characters!')
         .max(150, 'Can\'t be Greater than 150 Characters!'),
-    licenseNo: yup.string(),
     password: yup.string().required('Required *')
         .min(8, 'Must be At least 8 Characters!')
         .max(20, 'Can\'t be Greater than 20 Characters!'),
@@ -42,7 +41,7 @@ const schema = yup.object({
             'Password Should Match!'
         )
     }),
-    role: yup.string().required('Required *'),
+    role: yup.string().required('customer'),
 });
 
 class Signup extends Component {
@@ -64,7 +63,6 @@ class Signup extends Component {
         isCodeVerified: false,
         verificationLoading: false,
 
-        licenseError: '',
         showAlert: false,
     };
 
@@ -212,12 +210,6 @@ class Signup extends Component {
                     onSubmit={(values, { setSubmitting, resetForm }) => {
                         const currentComponent = this;
                         values.mobile = this.state.phone;
-                        console.log('values:', values)
-                        if (values.role === 'customer' && values.licenseNo === '') {
-                            this.setState({ licenseError: 'Required *' });
-                            setSubmitting(false);
-                        } else {
-                            this.setState({ licenseError: '' });
                             setTimeout(async () => {
                                 if (this.state.isCodeVerified && this.state.isCodeSended) {
                                     await axios.post(urls.POST_REQUEST.SIGNUP, values).then(function (res) {
@@ -236,7 +228,6 @@ class Signup extends Component {
                                             isCodeSended: false,
                                             isCodeVerified: false,
                                             verificationLoading: false,
-                                            licenseError: '',
                                             showAlert: true,
                                         });
                                         resetForm();
@@ -252,11 +243,10 @@ class Signup extends Component {
                                     alert('Verify your number first')
                                 }
                             }, 400);
-                        }
                     }}
                     initialValues={{
                         mobile: '', fullName: '', email: '', password: '', confirm_password: '',
-                        city: '', role: '', address: '', licenseNo: ''
+                        city: '', role: 'customer', address: '',
                     }}
                 >
                     {({
@@ -278,15 +268,15 @@ class Signup extends Component {
                             </Alert>
                             }
                             <Form noValidate onSubmit={handleSubmit}>
-                                {values.role === '' &&
+                                {!this.state.isCodeVerified &&
                                     <>
                                         <Form.Row>
                                             <Form.Group as={Col} lg='6' md="6" sm='12' xs='12' controlId="validationFormik01">
                                                 <Form.Label>Mobile *</Form.Label>
                                                 <PhoneInput
                                                     inputStyle={{ width: '100%' }}
-                                                    country={'pk'}
-                                                    onlyCountries={['pk', 'af']}
+                                                    country={'us'}
+                                                    onlyCountries={['us', 'pk']}
                                                     value={this.state.phone}
                                                     disabled={this.state.isCodeSended}
                                                     onChange={phone => this.setState({ phone: "+" + phone, mobileError: '' })}
@@ -359,30 +349,8 @@ class Signup extends Component {
                                         </Form.Row>
                                     </>
                                 }
-                                {values.role == '' && this.state.isCodeVerified && <Row>
-                                    <Row className='w-100'><label style={{ fontSize: '20px', width: '100%', textAlign: 'center' }}>Signup as ?</label></Row>
-                                    <Col lg='6' md='6' sm='12' xs='12' className='mb-1'>
-                                        <CustomButton
-                                            block
-                                            title={'Customer'}
-                                            onClick={() => setFieldValue('role', 'customer')}
-                                        >
-                                            <BiUserPlus style={globalStyle.leftIcon} />
-                                        </CustomButton>
-                                    </Col>
-                                    <Col lg='6' md='6' sm='12' xs='12'>
-                                        <CustomButton
-                                            block
-                                            title={'Delivery Boy'}
-                                            onClick={() => setFieldValue('role', 'delivery')}
-                                        >
-                                            <BiUserPlus style={globalStyle.leftIcon} />
-                                        </CustomButton>
-                                    </Col>
-                                </Row>
-                                }
 
-                                {values.role !== '' &&
+                                {this.state.isCodeVerified &&
                                     <>
                                         <Form.Row>
                                             {/* Full Name */}
@@ -437,31 +405,6 @@ class Signup extends Component {
                                                     </Form.Control.Feedback>
                                                 </InputGroup>
                                             </Form.Group>
-
-                                            {/* License No */}
-                                            {values.role == 'customer' &&
-                                                <Form.Group as={Col} lg={values.role == 'customer' ? '6' : '12'} md={values.role == 'customer' ? '6' : '12'} sm='12' xs='12'>
-                                                    <Form.Label>License Number *</Form.Label>
-                                                    <InputGroup>
-                                                        <InputGroup.Prepend>
-                                                            <InputGroup.Text id="inputGroupPrepend">
-                                                                <BiKey style={globalStyle.mediumMainIcon} />
-                                                            </InputGroup.Text>
-                                                        </InputGroup.Prepend>
-                                                        <Form.Control
-                                                            type="text"
-                                                            placeholder="Enter License Number"
-                                                            name="licenseNo"
-                                                            value={values.licenseNo}
-                                                            onChange={(e) => { setFieldValue('licenseNo', e.target.value), this.setState({ licenseError: '' }) }}
-                                                            isInvalid={this.state.licenseError}
-                                                        />
-                                                        <Form.Control.Feedback type="invalid">
-                                                            {this.state.licenseError}
-                                                        </Form.Control.Feedback>
-                                                    </InputGroup>
-                                                </Form.Group>
-                                            }
                                             {/* Email */}
                                             <Form.Group as={Col} lg={values.role == 'customer' ? '6' : '12'} md={values.role == 'customer' ? '6' : '12'} sm='12' xs='12' controlId="validationFormikUsername">
                                                 <Form.Label>Email</Form.Label>
@@ -547,7 +490,6 @@ class Signup extends Component {
                                                 <CustomButton
                                                     block
                                                     title={'Back'}
-                                                    onClick={() => setFieldValue('role', '')}
                                                     disabled={isSubmitting}
                                                 >
                                                     <BiArrowBack style={globalStyle.leftIcon} />

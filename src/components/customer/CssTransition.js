@@ -17,7 +17,7 @@ const CssTransition = props => {
                 <div className='dots_view'>
                     <Card style={{ width: '100%', height: '100%', border: 'none' }}>
                         <AiOutlineClose onClick={props.hide} style={{ color: `${consts.COLORS.MUTED}`, fontSize: '30px', marginLeft: 'auto', marginTop: '30px', marginBlock: '10px', marginRight: '10px', cursor: 'pointer' }} />
-                        <Card.Img variant="top" src="logo.jpg" style={{ width: '80%', alignSelf: 'center' }} />
+                        <Card.Img variant="top" src="logo.png" style={{ width: '80%', alignSelf: 'center' }} />
                         <div style={{ marginTop: 'auto', padding: '8%' }}>
                             <Card.Title style={{ fontWeight: 'bolder' }}>Contact Us</Card.Title>
                             <div className='flex-row align-items-center mt-2'>
@@ -26,11 +26,11 @@ const CssTransition = props => {
                             </div>
                             <div className='flex-row align-items-center  mt-2'>
                                 <AiOutlinePhone style={styles.dotsIcon} />
-                                <label className='dotViewLabel'>+92 335 9929528</label>
+                                <label className='dotViewLabel'>+92 310 1234567</label>
                             </div>
                             <div className='flex-row align-items-center  mt-2'>
                                 <HiOutlineMailOpen style={styles.dotsIcon} />
-                                <label className='dotViewLabel'>afghandarmaltoon@gmail.com</label>
+                                <label className='dotViewLabel'>grocery-shop@gmail.com</label>
                             </div>
                         </div>
                         <div className='flex-row d-flex justify-content-center align-items-center' style={{ background: `${consts.COLORS.MAIN}` }}>

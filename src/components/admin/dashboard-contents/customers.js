@@ -39,51 +39,6 @@ class Customers extends React.Component {
         }
     }
 
-    sendDiscardSms = async () => {
-        await axios.post(urls.POST_REQUEST.SEND_ORDER_STATUS_CHANGED_SMS,
-            {
-                to: this.state.single_user.mobile,
-                body: `Welcome to Afghan Darmaltoon!\nYour account is not approved, Your lisence is not valid.\nPlaease contact to admin for more details\n+92 313-9573389\nafghandarmaltoon@gmail.com`
-            }).then(function (res) {
-                console.log('code sended');
-            }).catch(function (err) {
-                console.log('error', err)
-            })
-    }
-    sendApproveSms = async () => {
-        await axios.post(urls.POST_REQUEST.SEND_ORDER_STATUS_CHANGED_SMS,
-            {
-                to: this.state.single_user.mobile,
-                body: `Welcome to Afghan Darmaltoon!\nYour account is approved, You can purchase now.\nPlaease contact to admin for more details\n+92 313-9573389\nafghandarmaltoon@gmail.com`
-            }).then(function (res) {
-                console.log('code sended');
-            }).catch(function (err) {
-                console.log('error', err)
-            })
-    }
-    sendUnRestrictSms = async () => {
-        await axios.post(urls.POST_REQUEST.SEND_ORDER_STATUS_CHANGED_SMS,
-            {
-                to: this.state.single_user.mobile,
-                body: `Welcome to Afghan Darmaltoon!\nYour account is unrestricted. You can purchase now\nPlaease contact to admin for more details\n+92 313-9573389\nafghandarmaltoon@gmail.com`
-            }).then(function (res) {
-                console.log('code sended');
-            }).catch(function (err) {
-                console.log('error', err)
-            })
-    }
-    sendRestrictSms = async () => {
-        await axios.post(urls.POST_REQUEST.SEND_ORDER_STATUS_CHANGED_SMS,
-            {
-                to: this.state.single_user.mobile,
-                body: `Welcome to Afghan Darmaltoon!\nYour account is restricted.\nPlaease contact to admin for more details\n+92 313-9573389\nafghandarmaltoon@gmail.com`
-            }).then(function (res) {
-                console.log('code sended');
-            }).catch(function (err) {
-                console.log('error', err)
-            })
-    }
-
     async handleUpdateStatus() {
         this.setState({ viewConfirmModalLoading: true })
         const currentComponent = this
@@ -131,13 +86,6 @@ class Customers extends React.Component {
         await axios.put(urls.PUT_REQUEST.CHANGE_CUSTOMER_STATUS + currentComponent.state.single_user._id, data, {
             headers: { 'authorization': currentComponent.props.token }
         }).then((res) => {
-            if (this.state.method === 'Approved')
-                this.sendApproveSms();
-            else if (this.state.method === 'Unrestricted')
-                this.sendUnRestrictSms();
-            else if (this.state.method === 'Restricted')
-                this.sendRestrictSms();
-
             currentComponent.setState({
                 viewConfirmModalLoading: false,
                 showViewConfirmModal: false,
@@ -285,12 +233,6 @@ class Customers extends React.Component {
                                         <Form.Label className='form_label'>ID</Form.Label>
                                         <InputGroup>
                                             <Form.Control type="text" disabled={true} size="sm" value={this.state.single_user._id} className='form_control' />
-                                        </InputGroup>
-                                    </Form.Group>
-                                    <Form.Group as={Col} lg={4} md={6} sm={6} xs={12}>
-                                        <Form.Label className='form_label'>Lisence #</Form.Label>
-                                        <InputGroup>
-                                            <Form.Control type="text" disabled={true} size="sm" value={this.state.single_user.licenseNo} className='form_control' />
                                         </InputGroup>
                                     </Form.Group>
                                     <Form.Group as={Col} lg={4} md={6} sm={6} xs={12}>
@@ -444,51 +386,6 @@ function CustomersTable(props) {
         }
     }
 
-    const sendDiscardSms = async () => {
-        await axios.post(urls.POST_REQUEST.SEND_ORDER_STATUS_CHANGED_SMS,
-            {
-                to: single_user.mobile,
-                body: `Welcome to Afghan Darmaltoon!\nYour account is not approved, Your lisence is not valid or something wront with your account.\nPlaease contact to admin for more details\n+92 313-9573389\nafghandarmaltoon@gmail.com`
-            }).then(function (res) {
-                console.log('code sended');
-            }).catch(function (err) {
-                console.log('error', err)
-            })
-    }
-    const sendApproveSms = async () => {
-        await axios.post(urls.POST_REQUEST.SEND_ORDER_STATUS_CHANGED_SMS,
-            {
-                to: single_user.mobile,
-                body: `Welcome to Afghan Darmaltoon!\nYour account is approved, You can purchase now.\nPlaease contact to admin for more details\n+92 313-9573389\nafghandarmaltoon@gmail.com`
-            }).then(function (res) {
-                console.log('code sended');
-            }).catch(function (err) {
-                console.log('error', err)
-            })
-    }
-    const sendUnRestrictSms = async () => {
-        await axios.post(urls.POST_REQUEST.SEND_ORDER_STATUS_CHANGED_SMS,
-            {
-                to: single_user.mobile,
-                body: `Welcome to Afghan Darmaltoon!\nYour account is un restricted. You can purchase now\nPlaease contact to admin for more details\n+92 313-9573389\nafghandarmaltoon@gmail.com`
-            }).then(function (res) {
-                console.log('code sended');
-            }).catch(function (err) {
-                console.log('error', err)
-            })
-    }
-    const sendRestrictSms = async () => {
-        await axios.post(urls.POST_REQUEST.SEND_ORDER_STATUS_CHANGED_SMS,
-            {
-                to: single_user.mobile,
-                body: `Welcome to Afghan Darmaltoon!\nYour account is restricted.\nPlaease contact to admin for more details\n+92 313-9573389\nafghandarmaltoon@gmail.com`
-            }).then(function (res) {
-                console.log('code sended');
-            }).catch(function (err) {
-                console.log('error', err)
-            })
-    }
-
     async function handleUpdateStatus() {
         let data = []
         if (method == 'Approved') {
@@ -501,7 +398,6 @@ function CustomersTable(props) {
             await axios.delete(urls.DELETE_REQUEST.DISCARD_NEW_CUSTOMER + single_user._id, {
                 headers: { 'authorization': props.token }
             }).then(function (res) {
-                sendDiscardSms();
                 setConfirmModalLoading(false)
                 setShowConfirmModal(false)
                 setAlertModalMsg('Customer deleted successfully')
@@ -534,13 +430,6 @@ function CustomersTable(props) {
         await axios.put(urls.PUT_REQUEST.CHANGE_CUSTOMER_STATUS + single_user._id, data, {
             headers: { 'authorization': props.token }
         }).then(function (res) {
-            if (method === 'Approved')
-                sendApproveSms();
-            else if (method === 'Unrestricted')
-                sendUnRestrictSms();
-            else if (method === 'Restricted')
-                sendRestrictSms();
-
             setConfirmModalLoading(false)
             setShowConfirmModal(false)
             setAlertModalMsg(`Customer ${method}  successfully`)
@@ -727,7 +616,6 @@ function CustomerTableBody(props) {
                     <tr>
                         <th>#</th>
                         <th>ID</th>
-                        <th>License #</th>
                         <th>Mobile</th>
                         <th>Name</th>
                         <th>City</th>
@@ -758,7 +646,6 @@ function CustomerTableBody(props) {
                                     }
                                 </div>
                             </td>
-                            <td align="center" >{element.licenseNo}</td>
                             <td align="center" >{element.mobile}</td>
                             <td align="center" >{element.fullName}</td>
                             <td align="center" >{element.city}</td>

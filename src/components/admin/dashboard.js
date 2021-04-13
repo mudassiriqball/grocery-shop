@@ -12,7 +12,6 @@ import { MdRemoveShoppingCart } from 'react-icons/md';
 
 import AddProduct from './dashboard-contents/add-product/add-new-product'
 import Customers from './dashboard-contents/customers';
-import DeliveryBoy from './dashboard-contents/deliveryBoy';
 import Slider from './dashboard-contents/slider';
 // Category
 import AddCategory from './dashboard-contents/category-contents/add-category'
@@ -79,7 +78,7 @@ const Dashboard = props => {
                             <Nav.Item style={styles.image_div}>
                                 <p>
                                     <Image src={props.avatar} roundedCircle thumbnail fluid style={styles.image} />
-                                    <Nav.Link style={styles.afghan}> {props.fullName} </Nav.Link>
+                                    <Nav.Link style={styles.nav_link}> {props.fullName} </Nav.Link>
                                 </p>
                             </Nav.Item>
                             <Nav.Item>
@@ -87,15 +86,6 @@ const Dashboard = props => {
                                     <Nav.Link eventKey="Customers" style={styles.nav_link} onClick={() => setShow_category(false)}>
                                         <FontAwesomeIcon size="xs" icon={faUsers} style={styles.fontawesome} />
                                         <div className="mr-auto _label">Customers</div>
-                                        <FontAwesomeIcon icon={faChevronRight} style={styles.forword_fontawesome} />
-                                    </Nav.Link>
-                                </div>
-                            </Nav.Item>
-                            <Nav.Item>
-                                <div className="nav_link">
-                                    <Nav.Link eventKey="DeliveryBoys" style={styles.nav_link} onClick={() => setShow_category(false)}>
-                                        <FontAwesomeIcon icon={faUsers} style={styles.fontawesome} />
-                                        <div className="mr-auto _label">Delivery Boys</div>
                                         <FontAwesomeIcon icon={faChevronRight} style={styles.forword_fontawesome} />
                                     </Nav.Link>
                                 </div>
@@ -179,11 +169,6 @@ const Dashboard = props => {
                             <Tab.Content style={{ height: `calc(100vh - 65px)`, overflowY: 'auto' }}>
                                 <Tab.Pane eventKey="Customers">
                                     <Customers
-                                        {...props}
-                                    />
-                                </Tab.Pane>
-                                <Tab.Pane eventKey="DeliveryBoys">
-                                    <DeliveryBoy
                                         {...props}
                                     />
                                 </Tab.Pane>
@@ -387,7 +372,7 @@ const styles = {
         minHeight: '100px',
         maxHeight: '100px',
     },
-    afghan: {
+    nav_link: {
         color: `${consts.COLORS.ADMIN_MAIN}`,
         fontSize: '14px',
         margin: '0%',

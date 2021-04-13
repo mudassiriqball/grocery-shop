@@ -12,26 +12,21 @@ export default function Footer() {
                     <Row>
                         <Col lg={4} md={4} sm={6} xs={12} style={{ padding: '2%' }}>
                             <h1 className='header'>ABOUT US</h1>
-                            <p className='paragraph'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <p className='paragraph'>.</p>
                         </Col>
                         <Col lg={4} md={4} sm={6} xs={12} style={{ padding: '2%' }}>
                             <Card style={{ background: consts.COLORS.MAIN, border: 'none', height: '400px' }}>
                                 <Card.Body className='text-white'>
                                     <h1 className='card_header'>GET IN TOUCH</h1>
-                                    <p className='paragraph'>+92 335 9929528</p>
-                                    <p className='paragraph'>afghandarmaltoon@gmail.com</p>
-                                    <p className='paragraph'>H-10 Islamabad, Pakistan</p>
+                                    <p className='paragraph'>+92 310 1234567</p>
+                                    <p className='paragraph'>grocery-shop@gmail.com</p>
                                 </Card.Body>
                             </Card>
                         </Col>
                         <Col lg={4} md={4} sm={6} xs={12} style={{ padding: '2%' }}>
                             <h1 className='header'>WHAT WE DO</h1>
                             <p className='paragraph'>CBD Oil
-                            Medical Cannabis
-                            Edibles
-                            Topicals
-                            Cannabis Extract
-                            Cannabis Accesories
+                            
                             </p>
                         </Col>
                     </Row>
@@ -39,7 +34,7 @@ export default function Footer() {
             </Card>
             <Row noGutters style={{ background: consts.COLORS.SEC_HOVER, padding: '2% 0%' }}>
                 <Col lg={6} md={6} sm={6} xs={12} className='d-flex justify-content-center align-items-center' >
-                    <h5 style={{ color: 'white', textAlign: 'center', pading: '0px' }}>Copyright By@Afghan Darmaltoon - 2020</h5>
+                    <h5 style={{ color: 'white', textAlign: 'center', pading: '0px' }}>Copyright By@Grocery Shop - 2020</h5>
                 </Col>
                 <Col lg={6} md={6} sm={6} xs={12} className='d-flex flex-row justify-content-center align-items-center' >
                     <div className='dotViewIcon'>

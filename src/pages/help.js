@@ -10,7 +10,7 @@ import urls from '../utils/urls';
 
 export default function Help(props) {
     const [user, setUser] = useState({
-        _id: '', fullName: '', mobile: '', city: '', licenseNo: '', address: '',
+        _id: '', fullName: '', mobile: '', city: '', address: '',
         email: '', status: '', role: '', wishList: '', cart: '', entry_date: ''
     });
 

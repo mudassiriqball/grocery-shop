@@ -234,11 +234,11 @@ class ForgotPassword extends Component {
                                     <Form noValidate onSubmit={handleSubmit}>
                                         <Form.Row>
                                             <Col lg={12} md={12} sm={12} xs={12} className='logo_col'>
-                                                <Image src="logo.jpg" fluid style={styles.image} />
+                                                <Image src="logo.png" fluid style={styles.image} />
                                             </Col>
                                             <Col lg={12} md={12} sm={12} xs={12} className='logo_col'>
                                                 <div className='d-flex flex-column ml-3'>
-                                                    <div className="text-center welcome_note" >{'Welcome to Afghan Darmaltoon'} </div>
+                                                    <div className="text-center welcome_note" >{'Welcome to rocery SHop'} </div>
                                                     <div className="text-center welcome_note pb-3" >{'Reset Your Password'} </div>
                                                 </div>
                                             </Col>

@@ -18,7 +18,6 @@ import PaginationRow from '../../pagination-row'
 import Loading from '../../loading';
 import CardSearchAccordion from '../../card-search-accordion'
 import renderError from '../../renderError';
-import QRCode from "react-qr-code";
 import constants from '../../../constants';
 
 
@@ -526,12 +525,6 @@ const ViewProduct = props => {
                         :
                         null
                     }
-                    {/* <Form.Group as={Col} lg={12} md={12} sm={12} xs={12}>
-                        <Form.Label className='form_label'>QR Code:</Form.Label>
-                        <InputGroup>
-                            <QRCode value={productData.qr_id ? productData.qr_id : ''} />
-                        </InputGroup>
-                    </Form.Group> */}
                     <Form.Group as={Col} lg={4} md={4} sm={6} xs={12}>
                         <Form.Label className='form_label'>Product ID:</Form.Label>
                         <InputGroup>

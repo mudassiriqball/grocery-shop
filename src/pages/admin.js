@@ -95,7 +95,7 @@ class Admin extends Component {
 
             token: null,
             user: {
-                _id: '', fullName: '', mobile: '', city: '', licenseNo: '', address: '',
+                _id: '', fullName: '', mobile: '', city: '',  address: '',
                 email: '', status: '', role: '', wishList: '', cart: '', entry_date: ''
             }
         }
