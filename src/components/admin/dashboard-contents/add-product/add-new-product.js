@@ -176,8 +176,8 @@ class AddNew extends Component {
             this.state.files && this.state.files.forEach(async (element) => {
                 const data = new FormData();
                 data.append('file', element);
-                data.append('upload_preset', 'afghandarmaltoon');
-                await fetch('https://api.cloudinary.com/v1_1/dhm7n3lg7/image/upload', {
+                data.append('upload_preset', 'ml_default');
+                await fetch('https://api.cloudinary.com/v1_1/daneglcza/image/upload', {
                     method: 'POST',
                     body: data,
                 }).then(async res => {

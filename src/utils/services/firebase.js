@@ -1,13 +1,13 @@
 import firebase from 'firebase'
 
 var firebaseConfig = {
-    apiKey: "AIzaSyAOd25x502YhekxnK9TytjdzfGooB5wKts",
-    authDomain: "afghan-darmal-toon.firebaseapp.com",
-    projectId: "afghan-darmal-toon",
-    storageBucket: "afghan-darmal-toon.appspot.com",
-    messagingSenderId: "262178561866",
-    appId: "1:262178561866:web:615a0f10f569ff1e03abb3",
-    measurementId: "G-XPQ222FQ4Z"
+    apiKey: "AIzaSyAuKKO49h-w07t1bRlEuQYAYrryEwCEcCU",
+    authDomain: "project-b1833.firebaseapp.com",
+    projectId: "project-b1833",
+    storageBucket: "project-b1833.appspot.com",
+    messagingSenderId: "970634827504",
+    appId: "1:970634827504:web:2b8730e5cbd9fb27245435",
+    measurementId: "G-P66B8G5P4Y"
 };
 // Initialize Firebase
 try {

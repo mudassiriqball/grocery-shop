@@ -18,8 +18,8 @@ export default function ChangrProfilePicture(props) {
         setIsLoading(true);
         const data = new FormData();
         data.append('file', img);
-        data.append('upload_preset', 'afghandarmaltoon');
-        await fetch('https://api.cloudinary.com/v1_1/dhm7n3lg7/image/upload', {
+        data.append('upload_preset', 'ml_default');
+        await fetch('https://api.cloudinary.com/v1_1/daneglcza/image/upload', {
             method: 'POST',
             body: data,
         }).then(async res => {
